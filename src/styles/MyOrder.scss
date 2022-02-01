@@ -1,0 +1,76 @@
+@import 'vars';
+
+.MyOrder {
+	width: 360px;
+	padding: 1em;
+	box-sizing: border-box;
+	position: absolute;
+	right: 20px;
+	border: 1px solid var(--very-light-pink);
+	border-radius: 6px;
+	background-color: white;
+
+
+	.title-container {
+		display: flex;
+	}
+	.title-container img {
+		transform: rotate(180deg);
+		margin-right: 14px;
+		&:hover {
+			opacity: .9;
+			cursor: pointer;
+		}
+	}
+	.title-container .title {
+		font-size: var(--lg);
+		font-weight: bold;
+		margin-bottom: 1em;
+		margin: 12px 0;
+	}
+	.order {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 16px;
+		align-items: center;
+		background-color: var(--text-input-field);
+		margin-bottom: 24px;
+		border-radius: 8px;
+		padding: 0 24px;
+	}
+	.order-products {
+		max-height: 20em;
+		overflow: auto;
+	}
+	.order p:nth-child(1) {
+		display: flex;
+		flex-direction: column;
+	}
+	.order p span:nth-child(1) {
+		font-size: var(--md);
+		font-weight: bold;
+	}
+	.order p:nth-child(2) {
+		text-align: end;
+		font-weight: bold;
+	}
+	
+	.primary-button {
+		background-color: var(--hospital-green);
+		border-radius: 8px;
+		border: none;
+		color: var(--white);
+		width: 100%;
+		cursor: pointer;
+		font-size: var(--md);
+		font-weight: bold;
+		height: 50px;
+	}
+	@media (max-width: 640px) {
+		& {
+			width: 100%;
+			right: 0px;
+		}
+	}
+	
+}

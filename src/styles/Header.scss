@@ -1,0 +1,149 @@
+@import 'vars';
+
+.HeaderOffset {height: 61px; margin-bottom: 2em;}
+
+.HeaderMobile {
+	display: none;
+	position: fixed;
+	transition: .3s;
+	left: -100%;
+	&.show {left: 0;}
+	top: 61px;
+	height: 100%;
+	background-color: white;
+	width: 75%;
+	box-sizing: border-box;
+	padding: 0 0;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	@media (max-width: 640px) {
+		& {display: block;}
+	}
+	h2 {
+		padding: 0 24px;
+	}
+	ul {
+		padding: 0;
+		list-style: none;
+	
+		li a, li div {
+			display: block;
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+			padding: 1em 24px;
+			transition: .1s;
+			cursor: pointer;
+			&:hover {
+				background-color: var(--text-input-field);
+			}
+		}
+		div.separator {
+			padding: 1em 0;
+			width: 100%;
+			display: grid;
+			place-items: center;
+			
+			div {
+				width: 85%;
+				height: 1px;
+				background-color: var(--very-light-pink);
+			}
+		}
+		.sign-out {
+			font-weight: normal;
+		}
+		
+	}
+}
+
+nav {
+	display: flex;
+	z-index: 1;
+	justify-content: space-between;
+	padding: 0 24px;
+	border-bottom: 1px solid var(--very-light-pink);
+
+	position: fixed;
+    width: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+	box-sizing: border-box;
+}
+.menu {
+	display: none;
+	cursor: pointer;
+	transition: .1s;
+	&:hover {opacity: .8;}
+}
+.nav-logo {
+	width: 100px;
+}
+.navbar-left ul,
+.navbar-right ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	height: 60px;
+	position: relative;
+}
+.navbar-left {
+	display: flex;
+}
+.navbar-left ul {
+	margin-left: 12px;
+}
+.navbar-left ul li a,
+.navbar-right ul li a {
+	text-decoration: none;
+	color: var(--very-light-pink);
+	border: 1px solid var(--white);
+	padding: 8px;
+	border-radius: 8px;
+}
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+	border: 1px solid var(--hospital-green);
+	color: var(--hospital-green);
+}
+.navbar-email {
+	color: var(--very-light-pink);
+	font-size: var(--sm);
+	margin-right: 12px;
+	cursor: pointer;
+}
+.navbar-shopping-cart {
+	position: relative;
+	cursor: pointer;
+	transition: .1s;
+	&:hover {
+		opacity: .8;
+	}
+}
+.navbar-shopping-cart div {
+	width: 16px;
+	height: 16px;
+	background-color: var(--hospital-green);
+	border-radius: 50%;
+	font-size: var(--sm);
+	font-weight: bold;
+	position: absolute;
+	top: -6px;
+	right: -3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media (max-width: 640px) {
+	.menu {
+		display: block;
+	}
+	.navbar-left ul {
+		display: none;
+	}
+	.navbar-email {
+		display: none;
+	}
+}

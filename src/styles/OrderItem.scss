@@ -1,0 +1,58 @@
+@import 'vars';
+
+.OrderItem {
+	display: grid;
+	grid-template-columns: auto 1fr auto auto;
+	gap: 16px;
+	margin-bottom: 24px;
+	align-items: center;
+
+	p { margin: 0; }
+
+	.AmountCalculator {
+		display: flex;
+
+		div {
+			user-select: none;
+			margin-top: 10px;
+			border: solid 1px var(--very-light-pink);
+			padding: .2em .5em;
+			&.Amount {
+				border-left: none;
+				border-right: none;
+			}
+			&.Minus, &.Plus {
+				cursor: pointer; 
+				transition: .1s;
+				&:hover {
+					background-color: var(--text-input-field);
+				}
+			}
+			&.Minus { border-radius: 6px 0 0 6px;}
+			&.Plus { border-radius: 0 6px 6px 0;}
+		}
+	}
+
+	.PriceTags {
+		text-align: right;
+		.WithAmount {color: var(--very-light-pink);}
+	}
+	.CloseCross {
+		cursor: pointer;
+	}
+	
+}
+.OrderItem figure {
+	margin: 0;
+}
+.OrderItem figure img {
+	width: 70px;
+	height: 70px;
+	border-radius: 20px;
+	object-fit: cover;
+}
+
+.OrderItem p:nth-child(3) {
+	font-size: var(--md);
+	font-weight: bold;
+}
