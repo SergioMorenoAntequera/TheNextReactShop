@@ -20,9 +20,9 @@ const Header = () => {
 	
 	return (<>
 		<nav className={styles.Header}> 
-			<img src={menu} alt="menu" className="menu" ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}/>
-			<div className="navbar-left">
-				<img src={logo} alt="logo" className="nav-logo" />
+			<img src={menu} alt="menu" className={styles.menu} ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}/>
+			<div className={styles.navbarLeft}>
+				<img src={logo} alt="logo" className={styles['nav-logo']} />
 				<ul>
 					<li>
 						<a href="/">All</a>
@@ -44,13 +44,13 @@ const Header = () => {
 					</li>
 				</ul>
 			</div>
-			<div className="navbar-right">
+			<div className={styles.navbarRight}>
 				<ul>
-					<li className="navbar-email" ref={toggleUserMenuSafeArea}
+					<li className={styles['navbar-email']} ref={toggleUserMenuSafeArea}
 						onClick={()=>{seToggleUserMenu(!toggleUserMenu)}}>
 						platzi@example.com
 					</li>
-					<li className="navbar-shopping-cart" ref={toggleOrdersSafeArea}
+					<li className={styles['navbar-shopping-cart']} ref={toggleOrdersSafeArea}
 						onClick={()=>{setToggleOrders(!toggleOrders)}}>
 
 						<img src={cart} alt="shopping cart" />
@@ -63,8 +63,8 @@ const Header = () => {
 				{toggleOrders && <MyOrder setToggleOrders={setToggleOrders}/>}
 			</div>
 		</nav>
-		<div className='HeaderOffset'></div>
-		<div className={`HeaderMobile ${toggleMenu ? 'show': ''}`} >
+		<div className={styles.HeaderOffset}></div>
+		<div className={`${styles.HeaderMobile} ${toggleMenu ? 'show': ''}`} >
 			<h2> CATEGORIES </h2>
 			<ul>
 				<li>

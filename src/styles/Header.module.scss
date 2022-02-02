@@ -61,7 +61,7 @@
 	z-index: 1;
 	justify-content: space-between;
 	padding: 0 24px;
-	border-bottom: 1px solid var($--very-light-pink);
+	border-bottom: 1px solid $--very-light-pink;
 
 	position: fixed;
     width: 100%;
@@ -70,6 +70,7 @@
     left: 0;
 	box-sizing: border-box;
 }
+
 .menu {
 	display: none;
 	cursor: pointer;
@@ -79,8 +80,8 @@
 .nav-logo {
 	width: 100px;
 }
-.navbar-left ul,
-.navbar-right ul {
+.navbarLeft ul,
+.navbarRight ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -89,22 +90,22 @@
 	height: 60px;
 	position: relative;
 }
-.navbar-left {
+.navbarLeft {
 	display: flex;
 }
-.navbar-left ul {
+.navbarLeft ul {
 	margin-left: 12px;
 }
-.navbar-left ul li a,
-.navbar-right ul li a {
+.navbarLeft ul li a,
+.navbarRight ul li a {
 	text-decoration: none;
 	color: var($--very-light-pink);
 	border: 1px solid var($--white);
 	padding: 8px;
 	border-radius: 8px;
 }
-.navbar-left ul li a:hover,
-.navbar-right ul li a:hover {
+.navbarLeft ul li a:hover,
+.navbarRight ul li a:hover {
 	border: 1px solid var($--hospital-green);
 	color: var($--hospital-green);
 }
@@ -140,10 +141,10 @@
 	.menu {
 		display: block;
 	}
-	.navbar-left ul {
+	.navbarLeft ul {
 		display: none;
 	}
 	.navbar-email {
 		display: none;
 	}
-}
+}	
