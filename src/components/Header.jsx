@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext } from 'react';
 import AppContext from "@contexts/AppContext"
-import '@styles/Header.scss';
 import Menu from "@components/Menu"
 import MyOrder from "@containers/MyOrder"
-
 import menu from "@icons/icon_menu.svg"
 import cart from "@icons/icon_shopping_cart.svg"
 import logo from "@logos/logo_yard_sale.svg"
 import useClickOutsideClose from '@hooks/useClickOutsideClose';
+import styles from '@styles/Header.module.scss'
 
 const Header = () => {
 	const { 
@@ -20,7 +19,7 @@ const Header = () => {
 	console.log()
 	
 	return (<>
-		<nav className='Header'> 
+		<nav className={styles.Header}> 
 			<img src={menu} alt="menu" className="menu" ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}/>
 			<div className="navbar-left">
 				<img src={logo} alt="logo" className="nav-logo" />

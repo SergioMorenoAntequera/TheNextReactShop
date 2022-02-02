@@ -2,26 +2,32 @@
     "compilerOptions": {
         "baseUrl": "src",
         "paths": {
-            "@pages": [
-              "pages/"
+            "@pages/*": [
+              "pages/*"
             ],
-            "@components": [
-              "components/"
+            "@components/*": [
+              "components/*"
             ],
-            "@containers": [
-              "containers/"
+            "@containers/*": [
+              "containers/*"
             ],
-            "@icons": [
-              "assets/icons/"
+            "@icons/*": [
+              "assets/icons/*"
             ],
-            "@logos": [
-              "assets/logos/"
+            "@logos/*": [
+              "assets/logos/*"
             ],
-            "@context": [
-              "content/"
+            "@contexts/*": [
+              "contexts/*"
             ],
-            "@styles": [
-              "styles/"
+            "@styles/*": [
+              "styles/*"
+            ],
+            "@templates/*": [
+              "templates/*"
+            ],
+            "@hooks/*": [
+              "hooks/*"
             ]
           }
     },

@@ -34,7 +34,7 @@
 			transition: .1s;
 			cursor: pointer;
 			&:hover {
-				background-color: var(--text-input-field);
+				background-color: var($--text-input-field);
 			}
 		}
 		div.separator {
@@ -46,7 +46,7 @@
 			div {
 				width: 85%;
 				height: 1px;
-				background-color: var(--very-light-pink);
+				background-color: var($--very-light-pink);
 			}
 		}
 		.sign-out {
@@ -56,12 +56,12 @@
 	}
 }
 
-nav {
+.Header {
 	display: flex;
 	z-index: 1;
 	justify-content: space-between;
 	padding: 0 24px;
-	border-bottom: 1px solid var(--very-light-pink);
+	border-bottom: 1px solid var($--very-light-pink);
 
 	position: fixed;
     width: 100%;
@@ -98,19 +98,19 @@ nav {
 .navbar-left ul li a,
 .navbar-right ul li a {
 	text-decoration: none;
-	color: var(--very-light-pink);
-	border: 1px solid var(--white);
+	color: var($--very-light-pink);
+	border: 1px solid var($--white);
 	padding: 8px;
 	border-radius: 8px;
 }
 .navbar-left ul li a:hover,
 .navbar-right ul li a:hover {
-	border: 1px solid var(--hospital-green);
-	color: var(--hospital-green);
+	border: 1px solid var($--hospital-green);
+	color: var($--hospital-green);
 }
 .navbar-email {
-	color: var(--very-light-pink);
-	font-size: var(--sm);
+	color: var($--very-light-pink);
+	font-size: var($--sm);
 	margin-right: 12px;
 	cursor: pointer;
 }
@@ -125,9 +125,9 @@ nav {
 .navbar-shopping-cart div {
 	width: 16px;
 	height: 16px;
-	background-color: var(--hospital-green);
+	background-color: var($--hospital-green);
 	border-radius: 50%;
-	font-size: var(--sm);
+	font-size: var($--sm);
 	font-weight: bold;
 	position: absolute;
 	top: -6px;

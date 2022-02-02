@@ -15,7 +15,7 @@
 		div {
 			user-select: none;
 			margin-top: 10px;
-			border: solid 1px var(--very-light-pink);
+			border: solid 1px var($--very-light-pink);
 			padding: .2em .5em;
 			&.Amount {
 				border-left: none;
@@ -25,7 +25,7 @@
 				cursor: pointer; 
 				transition: .1s;
 				&:hover {
-					background-color: var(--text-input-field);
+					background-color: var($--text-input-field);
 				}
 			}
 			&.Minus { border-radius: 6px 0 0 6px;}
@@ -35,7 +35,7 @@
 
 	.PriceTags {
 		text-align: right;
-		.WithAmount {color: var(--very-light-pink);}
+		.WithAmount {color: var($--very-light-pink);}
 	}
 	.CloseCross {
 		cursor: pointer;
@@ -53,6 +53,6 @@
 }
 
 .OrderItem p:nth-child(3) {
-	font-size: var(--md);
+	font-size: var($--md);
 	font-weight: bold;
 }

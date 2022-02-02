@@ -3,7 +3,7 @@
 .Menu {
 	width: 120px;
 	height: auto;
-	border: 1px solid var(--very-light-pink);
+	border: 1px solid var($--very-light-pink);
 	border-radius: 6px;
 	padding: 1em;
 	position: absolute;
@@ -26,15 +26,15 @@
 	font-weight: bold;
 }
 .Menu ul li:last-child {
-	border-top: 1px solid var(--very-light-pink);
+	border-top: 1px solid var($--very-light-pink);
 }
 .Menu ul li:last-child a {
-	color: var(--hospital-green);
-	font-size: var(--sm);
+	color: var($--hospital-green);
+	font-size: var($--sm);
 	margin-top: 1em;
 }
 .Menu ul li a {
-	color: var(--back);
+	color: var($--black);
 	text-decoration: none;
 	margin: 0;
 	margin-bottom: 0;
