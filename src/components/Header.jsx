@@ -7,6 +7,7 @@ import cart from "@icons/icon_shopping_cart.svg"
 import logo from "@logos/logo_yard_sale.svg"
 import useClickOutsideClose from '@hooks/useClickOutsideClose';
 import styles from '@styles/Header.module.scss'
+import Image from 'next/image';
 
 const Header = () => {
 	const { 
@@ -16,13 +17,12 @@ const Header = () => {
 
 	const [toggleUserMenuSafeArea, toggleUserMenu, seToggleUserMenu] = useClickOutsideClose()
 	const [toggleMenuSafeArea, toggleMenu, seToggleMenu] = useClickOutsideClose([".HeaderMobile"])
-	console.log()
 	
 	return (<>
 		<nav className={styles.Header}> 
-			<img src={menu} alt="menu" className={styles.menu} ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}/>
+			<Image src={menu} alt="menu" className={styles.menu} ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}/>
 			<div className={styles.navbarLeft}>
-				<img src={logo} alt="logo" className={styles['nav-logo']} />
+				<Image src={logo} alt="logo" className={styles['nav-logo']} />
 				<ul>
 					<li>
 						<a href="/">All</a>
@@ -53,7 +53,7 @@ const Header = () => {
 					<li className={styles['navbar-shopping-cart']} ref={toggleOrdersSafeArea}
 						onClick={()=>{setToggleOrders(!toggleOrders)}}>
 
-						<img src={cart} alt="shopping cart" />
+						<Image src={cart} alt="shopping cart" />
 						{productsInCartCount > 0 &&
 							<div> {productsInCartCount} </div>
 						}
@@ -64,7 +64,7 @@ const Header = () => {
 			</div>
 		</nav>
 		<div className={styles.HeaderOffset}></div>
-		<div className={`${styles.HeaderMobile} ${toggleMenu ? 'show': ''}`} >
+		<div className={`${styles.HeaderMobile} ${toggleMenu ? styles.show: ''}`} >
 			<h2> CATEGORIES </h2>
 			<ul>
 				<li>
