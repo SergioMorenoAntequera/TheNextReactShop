@@ -15,6 +15,6 @@ module.exports = {
   //   ]
   // }
   images: {
-    domains: ['placeimg.com'],
+    domains: ['placeimg.com', "images.pexels.com"],
   },
-}
+};

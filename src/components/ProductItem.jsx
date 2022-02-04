@@ -1,20 +1,19 @@
 import React, { useContext } from 'react';
-import addToCart from "@icons/bt_add_to_cart.svg"
-import addedToCart from "@icons/bt_added_to_cart.svg"
-import AppContext from "@contexts/AppContext"
+import addToCart from "@icons/bt_add_to_cart.svg";
+import addedToCart from "@icons/bt_added_to_cart.svg";
+import AppContext from "@contexts/AppContext";
 import styles from '@styles/ProductItem.module.scss';
 import Image from 'next/image';
 
 const ProductItem = ({product}) => {
 	const { productsInCart, addProductToCart, setToggleOrders } = useContext(AppContext);
-	let iconToShow = addToCart;
 
 	function handleAddToCart() {
-		let productInList = productsInCart.find(p=> p.id === product.id)
+		let productInList = productsInCart.find(p=> p.id === product.id);
 		if(!productInList || productInList?.amount == 0) {
 			addProductToCart(product);
 		} else {
-			setToggleOrders(true)	
+			setToggleOrders(true);
 		}
 	}
 	return (
@@ -35,6 +34,6 @@ const ProductItem = ({product}) => {
 			</div>
 		</div>
 	);
-}
+};
 
 export default ProductItem;

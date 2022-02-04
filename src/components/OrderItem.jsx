@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import AppContext from "@contexts/AppContext"
-import close from "@icons/icon_close.png"
-import styles from "@styles/OrderItem.module.scss"
+import AppContext from "@contexts/AppContext";
+import close from "@icons/icon_close.png";
+import styles from "@styles/OrderItem.module.scss";
+import Image from 'next/image';
 
 const OrderItem = ({product}) => {
 	const {
@@ -12,14 +13,14 @@ const OrderItem = ({product}) => {
 	return (
 		<div className={styles.OrderItem}>
 			<figure>
-				<img src={product.images[0]} alt={product.title} />
+				<Image src={product.images[0]} alt={product.title} />
 			</figure>
 			<div className='left'>
 				<p>{product.title}</p>
 				<div className='AmountCalculator'> 
-					<div className='Minus' onClick={()=>{changeAmount(product, -1)}}> - </div>
+					<div className='Minus' onClick={()=>{changeAmount(product, -1);}}> - </div>
 					<div className='Amount'> {product.amount} </div>
-					<div className='Plus' onClick={()=>{changeAmount(product, +1)}}> + </div>
+					<div className='Plus' onClick={()=>{changeAmount(product, +1);}}> + </div>
 				</div>
 			</div>
 			<div className='PriceTags'>
@@ -28,13 +29,13 @@ const OrderItem = ({product}) => {
 					<p className='WithAmount'> ${product.price * product.amount} </p>
 				}
 			</div>
-			<img className='CloseCross' 
+			<Image className='CloseCross' 
 				src={close} 
 				onClick={()=>removeProductFromCart(product)} 
 				alt="close" 
 			/>
 		</div>
 	);
-}
+};
 
 export default OrderItem;

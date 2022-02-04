@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import AppContext from "@contexts/AppContext"
-import Menu from "@components/Menu"
-import MyOrder from "@containers/MyOrder"
-import menu from "@icons/icon_menu.svg"
-import cart from "@icons/icon_shopping_cart.svg"
-import logo from "@logos/logo_yard_sale.svg"
+import AppContext from "@contexts/AppContext";
+import Menu from "@components/Menu";
+import MyOrder from "@containers/MyOrder";
+import menu from "@icons/icon_menu.svg";
+import cart from "@icons/icon_shopping_cart.svg";
+import logo from "@logos/logo_yard_sale.svg";
 import useClickOutsideClose from '@hooks/useClickOutsideClose';
-import styles from '@styles/Header.module.scss'
+import styles from '@styles/Header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,8 +16,8 @@ const Header = () => {
 		toggleOrdersSafeArea, toggleOrders, setToggleOrders
 	} = useContext(AppContext);
 
-	const [toggleUserMenuSafeArea, toggleUserMenu, seToggleUserMenu] = useClickOutsideClose()
-	const [toggleMenuSafeArea, toggleMenu, seToggleMenu] = useClickOutsideClose([`.${styles.HeaderMobile}`])
+	const [toggleUserMenuSafeArea, toggleUserMenu, seToggleUserMenu] = useClickOutsideClose();
+	const [toggleMenuSafeArea, toggleMenu, seToggleMenu] = useClickOutsideClose([`.${styles.HeaderMobile}`]);
 	
 	return (<>
 		<nav className={styles.Header}> 
@@ -26,40 +26,40 @@ const Header = () => {
 			</div>
 			
 			<div className={styles.navbarLeft}>
-				<Link href="/">
+				<Link href="/" passHref>
 					<div className='logoContainer'>
 						<Image src={logo} alt="logo" className={styles['nav-logo']} />
 					</div>
 				</Link>
 				<ul>
 					<li>
-						<a href="/">All</a>
+						<Link href="/">All</Link>
 					</li>
 					<li>
-						<a href="/">Clothes</a>
+						<Link href="/">Clothes</Link>
 					</li>
 					<li>
-						<a href="/">Electronics</a>
+						<Link href="/">Electronics</Link>
 					</li>
 					<li>
-						<a href="/">Furnitures</a>
+						<Link href="/">Furnitures</Link>
 					</li>
 					<li>
-						<a href="/">Toys</a>
+						<Link href="/">Toys</Link>
 					</li>
 					<li>
-						<a href="/">Others</a>
+						<Link href="/">Others</Link>
 					</li>
 				</ul>
 			</div>
 			<div className={styles.navbarRight}>
 				<ul>
 					<li className={styles['navbar-email']} ref={toggleUserMenuSafeArea}
-						onClick={()=>{seToggleUserMenu(!toggleUserMenu)}}>
+						onClick={()=>{seToggleUserMenu(!toggleUserMenu);}}>
 						platzi@example.com
 					</li>
 					<li className={styles['navbar-shopping-cart']} ref={toggleOrdersSafeArea}
-						onClick={()=>{setToggleOrders(!toggleOrders)}}>
+						onClick={()=>{setToggleOrders(!toggleOrders);}}>
 
 						<Image src={cart} alt="shopping cart" />
 						{productsInCartCount > 0 &&
@@ -77,22 +77,22 @@ const Header = () => {
 			<h2> CATEGORIES </h2>
 			<ul>
 				<li>
-					<a href="/">All</a>
+					<Link href="/">All</Link>
 				</li>
 				<li>
-					<a href="/">Clothes</a>
+					<Link href="/">Clothes</Link>
 				</li>
 				<li>
-					<a href="/">Electronics</a>
+					<Link href="/">Electronics</Link>
 				</li>
 				<li>
-					<a href="/">Furnitures</a>
+					<Link href="/">Furnitures</Link>
 				</li>
 				<li>
-					<a href="/">Toys</a>
+					<Link href="/">Toys</Link>
 				</li>
 				<li>
-					<a href="/">Others</a>
+					<Link href="/">Others</Link>
 				</li>
 
 				<div className='separator'>
@@ -108,7 +108,7 @@ const Header = () => {
 				<li>
 					<div> My Account </div>
 				</li>
-				<li onClick={()=>{seToggleUserMenu(!toggleUserMenu)}} 
+				<li onClick={()=>{seToggleUserMenu(!toggleUserMenu);}} 
 					className="sign-out">
 
 					<div> Sign out </div>
@@ -117,6 +117,6 @@ const Header = () => {
 			</ul>
 		</div>
 	</>);
-}
+};
 
 export default Header;
