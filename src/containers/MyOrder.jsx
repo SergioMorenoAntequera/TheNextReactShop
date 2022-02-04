@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import OrderItem from '@components/OrderItem';
-import AppContext from "@contexts/AppContext"
-import flechita from '@icons/flechita.svg'
-import styles from "@styles/MyOrder.module.scss"
+import AppContext from "@contexts/AppContext";
+import flechita from '@icons/flechita.svg';
+import styles from "@styles/MyOrder.module.scss";
 import Link from 'next/link';
+import Image from 'next/image';
 
 const MyOrder = ({setToggleOrders}) => {
 	const { 
@@ -14,7 +15,7 @@ const MyOrder = ({setToggleOrders}) => {
 	return (
 		<aside className={styles.MyOrder}>
 			<div className="title-container">
-				<img src={flechita} alt="arrow" onClick={()=>setToggleOrders(false)}/>
+				<Image src={flechita} alt="arrow" width={10} height={10} onClick={()=>setToggleOrders(false)}/>
 				<p className="title">My order</p>
 			</div>
 			<div className="my-order-content">
@@ -25,8 +26,6 @@ const MyOrder = ({setToggleOrders}) => {
 					)}
 				</div>
 				
-				
-
 				<div className="order">
 					<p>
 						<span>Total</span>
@@ -39,6 +38,6 @@ const MyOrder = ({setToggleOrders}) => {
 			</div>
 		</aside>
 	);
-}
+};
 
 export default MyOrder;
