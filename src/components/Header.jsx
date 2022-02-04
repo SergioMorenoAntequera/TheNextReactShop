@@ -63,6 +63,7 @@ const Header = () => {
 				{toggleOrders && <MyOrder setToggleOrders={setToggleOrders}/>}
 			</div>
 		</nav>
+		
 		<div className={styles.HeaderOffset}></div>
 		<div className={`${styles.HeaderMobile} ${toggleMenu ? styles.show: ''}`} >
 			<h2> CATEGORIES </h2>
