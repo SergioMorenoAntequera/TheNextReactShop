@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import OrderItem from '@components/OrderItem';
 import styles from '@styles/Checkout.module.scss';
 import AppContext from '@contexts/AppContext';
+import Head from 'next/head';
 
 export default function Checkout() {
     const { 
@@ -9,7 +10,10 @@ export default function Checkout() {
 		getTotalPrice
 	} = useContext(AppContext);
 
-	return (
+	return (<>
+		<Head>
+			<title> Checkout </title>
+		</Head>
 		<div className={styles.Checkout}>
 			<div className={styles['Checkout-container']}>
 				<h1 className={styles.title}>My order</h1>
@@ -27,5 +31,6 @@ export default function Checkout() {
                 )}
 			</div>
 		</div>
+	</>
 	);
 }
