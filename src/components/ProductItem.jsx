@@ -29,7 +29,7 @@ const ProductItem = ({product}) => {
 					<Image 
 						onClick={handleAddToCart} 
 						src={!productsInCart.map(p=>p.id).includes(product.id)  ? addToCart : addedToCart} 
-						alt="add To Cart" 
+						alt="add To Cart"  width={35} height={35}
 					/>
 				</figure>
 			</div>

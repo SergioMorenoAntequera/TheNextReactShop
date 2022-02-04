@@ -8,6 +8,7 @@ import logo from "@logos/logo_yard_sale.svg"
 import useClickOutsideClose from '@hooks/useClickOutsideClose';
 import styles from '@styles/Header.module.scss'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
 	const { 
@@ -16,13 +17,20 @@ const Header = () => {
 	} = useContext(AppContext);
 
 	const [toggleUserMenuSafeArea, toggleUserMenu, seToggleUserMenu] = useClickOutsideClose()
-	const [toggleMenuSafeArea, toggleMenu, seToggleMenu] = useClickOutsideClose([".HeaderMobile"])
+	const [toggleMenuSafeArea, toggleMenu, seToggleMenu] = useClickOutsideClose([`.${styles.HeaderMobile}`])
 	
 	return (<>
 		<nav className={styles.Header}> 
-			<Image src={menu} alt="menu" className={styles.menu} ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}/>
+			<div className={styles.menu} ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}>
+				<Image src={menu} alt="menu"/>
+			</div>
+			
 			<div className={styles.navbarLeft}>
-				<Image src={logo} alt="logo" className={styles['nav-logo']} />
+				<Link href="/">
+					<div className='logoContainer'>
+						<Image src={logo} alt="logo" className={styles['nav-logo']} />
+					</div>
+				</Link>
 				<ul>
 					<li>
 						<a href="/">All</a>
