@@ -33,11 +33,11 @@ const MyOrder = ({setToggleOrders}) => {
 					<p>${getTotalPrice()}</p>
 				</div>
 				
-				<div className={styles["primary-button"]}>
-					<Link href="/checkout">
+				<Link href="/checkout" passHref>
+					<div className={styles["primary-button"]} onClick={()=>setToggleOrders(false)}>
 						Checkout
-					</Link>
-				</div>
+					</div>
+				</Link>
 			</div>
 		</aside>
 	);

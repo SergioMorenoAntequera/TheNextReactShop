@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from '@styles/Menu.module.scss';
 import Link from 'next/link';
+import styles from '@styles/Menu.module.scss';
 
 const Menu = () => {
 	return (
 		<div className={styles.Menu}>
-			<ul>
+			<ul className={styles['Menu-List']}>
 				<li>
-					<Link href="/" className="title">My orders</Link>
+					<Link href="/" className={styles.title}>My orders</Link>
 				</li>
 				<li>
 					<Link href="/">My account</Link>

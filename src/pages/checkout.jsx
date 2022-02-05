@@ -14,6 +14,7 @@ export default function Checkout() {
       </Head>
       <div className={styles.Checkout}>
         <div className={styles["Checkout-container"]}>
+          
           <h1 className={styles.title}>My order</h1>
           <div className={styles["Checkout-content"]}>
             <div className={styles.order}>
