@@ -5,12 +5,11 @@
     overflow: hidden;
     position: relative;
     display: inline-block;
-
+    overflow: hidden;
 
     .Column-Container {
         display:grid;
-        height: 100%;
-        overflow: hidden;
+        
         position: relative;
         // top: -50%;
     }
