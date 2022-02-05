@@ -3,7 +3,6 @@
 .HeaderOffset {height: 61px; margin-bottom: 2em;}
 
 .HeaderMobile {
-	display: none;
 	position: fixed;
 	transition: .3s;
 	z-index: 1;
@@ -36,7 +35,7 @@
 			transition: .1s;
 			cursor: pointer;
 			&:hover {
-				background-color: var($--text-input-field);
+				background-color: $--text-input-field;
 			}
 		}
 		div.separator {
@@ -48,7 +47,7 @@
 			div {
 				width: 85%;
 				height: 1px;
-				background-color: var($--very-light-pink);
+				background-color: $--very-light-pink;
 			}
 		}
 		.sign-out {
@@ -77,10 +76,14 @@
 }
 
 .menu {
-	display: none !important;
 	cursor: pointer;
 	transition: .1s;
 	&:hover {opacity: .8;}
+	display: flex;
+	gap: 1em;
+	place-items: center;
+	img {display: block; width: 20px;}
+	p {font-weight: bold; }
 }
 
 .nav-logo {
@@ -107,19 +110,19 @@
 .navbarLeft ul li a,
 .navbarRight ul li a {
 	text-decoration: none;
-	color: var($--very-light-pink);
-	border: 1px solid var($--white);
+	color: $--very-light-pink;
+	border: 1px solid $--white;
 	padding: 8px;
 	border-radius: 8px;
 }
 .navbarLeft ul li a:hover,
 .navbarRight ul li a:hover {
-	border: 1px solid var($--hospital-green);
-	color: var($--hospital-green);
+	border: 1px solid $--hospital-green;
+	color: $--hospital-green;
 }
 .navbar-email {
-	color: var($--very-light-pink);
-	font-size: var($--sm);
+	color: $--very-light-pink;
+	font-size: $--sm;
 	margin-right: 12px;
 	cursor: pointer;
 }
@@ -134,9 +137,9 @@
 .navbar-shopping-cart div {
 	width: 16px;
 	height: 16px;
-	background-color: var($--hospital-green);
+	background-color: $--hospital-green;
 	border-radius: 50%;
-	font-size: var($--sm);
+	font-size: $--sm;
 	font-weight: bold;
 	position: absolute;
 	top: -6px;
@@ -146,10 +149,7 @@
 	align-items: center;
 }
 @media (max-width: 640px) {
-	.menu {
-		display: grid !important;
-		place-items: center;
-	}
+	
 	.navbarLeft ul {
 		display: none;
 	}

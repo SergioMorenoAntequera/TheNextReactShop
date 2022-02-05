@@ -14,27 +14,30 @@ const MyOrder = ({setToggleOrders}) => {
 
 	return (
 		<aside className={styles.MyOrder}>
-			<div className="title-container">
+			<div className={styles["title-container"]}>
 				<Image src={flechita} alt="arrow" width={10} height={10} onClick={()=>setToggleOrders(false)}/>
-				<p className="title">My order</p>
+				<p className={styles["title"]}>My order</p>
 			</div>
-			<div className="my-order-content">
+			<div className={styles["my-order-content"]}>
 				
-				<div className='order-products'>
+				<div className={styles["order-products"]}>
 					{productsInCart.map(p=>
 						<OrderItem key={`orderItem-${p.id}`} product={p}/>
 					)}
 				</div>
 				
-				<div className="order">
+				<div className={styles.order}>
 					<p>
 						<span>Total</span>
 					</p>
 					<p>${getTotalPrice()}</p>
 				</div>
-				<Link className="primary-button" href="/checkout">
-					Checkout
-				</Link>
+				
+				<div className={styles["primary-button"]}>
+					<Link href="/checkout">
+						Checkout
+					</Link>
+				</div>
 			</div>
 		</aside>
 	);

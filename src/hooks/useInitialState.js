@@ -1,5 +1,7 @@
 import { useState } from "react";
 import useClickOutsideClose from "@hooks/useClickOutsideClose";
+import MyOrderStyles from "@styles/MyOrder.module.scss";
+import ProductItemStyles from "@styles/ProductItem.module.scss";
 
 export default function useInitialState() {
   const [productsInCart, setProductsInCart] = useState([]);
@@ -42,7 +44,10 @@ export default function useInitialState() {
     return total;
   }
 
-  const [toggleOrdersSafeArea, toggleOrders, setToggleOrders] = useClickOutsideClose([".MyOrder", ".AddToCart-Icon"]);
+  const [toggleOrdersSafeArea, toggleOrders, setToggleOrders] = useClickOutsideClose([
+    `.${MyOrderStyles.MyOrder}`, 
+    `.${ProductItemStyles['AddToCart-Icon']}`
+  ]);
 
   return {
     productsInCart,

@@ -4,7 +4,7 @@ import Menu from "@components/Menu";
 import MyOrder from "@containers/MyOrder";
 import menu from "@icons/icon_menu.svg";
 import cart from "@icons/icon_shopping_cart.svg";
-import logo from "@logos/logo_yard_sale.svg";
+// import logo from "@logos/logo_yard_sale.svg";
 import useClickOutsideClose from '@hooks/useClickOutsideClose';
 import styles from '@styles/Header.module.scss';
 import Image from 'next/image';
@@ -21,35 +21,14 @@ const Header = () => {
 	
 	return (<>
 		<nav className={styles.Header}> 
-			<div className={styles.menu} ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}>
-				<Image src={menu} alt="menu"/>
-			</div>
-			
-			<div className={styles.navbarLeft}>
+			<div className={styles.menu}>
+				<img src={menu.src} alt="menu" ref={toggleMenuSafeArea} onClick={()=>seToggleMenu(!toggleMenu)}/>
 				<Link href="/" passHref>
-						<img src={logo.src} alt="logo" className={styles['nav-logo']} />
+					<p> NEXT SHOP </p>
+					{/* <img src={logo.src} alt="logo" className={styles['nav-logo']} /> */}
 				</Link>
-				<ul>
-					<li>
-						<Link href="/">All</Link>
-					</li>
-					<li>
-						<Link href="/">Clothes</Link>
-					</li>
-					<li>
-						<Link href="/">Electronics</Link>
-					</li>
-					<li>
-						<Link href="/">Furnitures</Link>
-					</li>
-					<li>
-						<Link href="/">Toys</Link>
-					</li>
-					<li>
-						<Link href="/">Others</Link>
-					</li>
-				</ul>
 			</div>
+
 			<div className={styles.navbarRight}>
 				<ul>
 					<li className={styles['navbar-email']} ref={toggleUserMenuSafeArea}
@@ -68,7 +47,7 @@ const Header = () => {
 				{toggleUserMenu && <Menu/>}
 				{toggleOrders && <MyOrder setToggleOrders={setToggleOrders}/>}
 			</div>
-		</nav>
+		</nav>	
 		
 		<div className={styles.HeaderOffset}></div>
 		<div className={`${styles.HeaderMobile} ${toggleMenu ? styles.show: ''}`} >
