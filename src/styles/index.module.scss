@@ -1,0 +1,41 @@
+@import 'vars';
+
+.Column {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+
+
+    .Column-Container {
+        display:grid;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        // top: -50%;
+    }
+
+
+    .image {
+        position: relative;
+
+        &.down {
+            transform: translate(0, -50%);
+            animation: 30s alternate linear infinite down;
+        }
+        &.up {
+            transform: translate(0, 50%);
+            animation: 30s alternate linear infinite up;
+        }
+        @keyframes down {
+            100% {
+                transform: translate(0, 50%);
+            }
+        }
+        @keyframes up {
+            100% {
+                transform: translate(0, -50%);
+            }
+        }
+    }
+}

@@ -3,11 +3,11 @@ import ProductItem from '@components/ProductItem';
 import useGetApiData from '@hooks/useGetApiData';
 import styles from '@styles/ProductList.module.scss';
 
-const API = "https://api.escuelajs.co/api/v1/products"
+const API = "https://api.escuelajs.co/api/v1/products";
 
 const ProductList = () => {
 
-	const products = useGetApiData(API)
+	const products = useGetApiData(API);
 
 	return (<div className={styles.ProductList}>
 		
@@ -16,6 +16,6 @@ const ProductList = () => {
 		)}
 
 	</div>);
-}
+};
 
 export default ProductList;
