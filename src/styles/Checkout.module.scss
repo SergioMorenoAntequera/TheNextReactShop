@@ -9,15 +9,25 @@
 		font-size: var(--lg);
 		margin-bottom: 40px;
 	}
+	
+	
+	
 	.Checkout-container {
+		padding: 0 2em;
 		display: grid;
 		grid-template-rows: auto 1fr auto;
-		width: 300px;
+	}
+	.CheckoutStructure {
+		display: grid;
+		grid-template-columns: 60% 40%;
 	}
 	.Checkout-content {
 		display: flex;
 		flex-direction: column;
 	}
+
+
+
 	.order {
 		display: grid;
 		grid-template-columns: auto 1fr;
