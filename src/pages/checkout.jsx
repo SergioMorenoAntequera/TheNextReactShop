@@ -18,23 +18,24 @@ export default function Checkout() {
 
           <div className={styles.CheckoutStructure}>
 
-            <div>
+            <div className={styles.OrderContainer}>
               {productsInCart.map((p) => (
                 <CheckoutItem key={`checkoutItem-${p.id}`} product={p} />
               ))}
             </div>
 
+            <div className={styles.separator}> </div> 
+
             <div className={styles["Checkout-content"]}>
-              <div className={styles.order}>
+              <div className={styles.summary}>
                 <p>
-                  <span> 03.25.21 </span>
-                  <span> 6 articles </span>
+                  <span> {productsInCart.length} articles </span>
                 </p>
                 <p>${getTotalPrice()}</p>
               </div>
-              <button> CTA </button>
-            </div>
 
+              <button className={styles.CompleteOrder}> Complete Order </button>
+            </div>
           </div>
         </div>
       </div>

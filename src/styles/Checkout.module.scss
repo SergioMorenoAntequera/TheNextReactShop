@@ -10,23 +10,38 @@
 		margin-bottom: 40px;
 	}
 	
-	
-	
 	.Checkout-container {
 		padding: 0 2em;
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 	}
+
 	.CheckoutStructure {
 		display: grid;
-		grid-template-columns: 60% 40%;
+		grid-template-columns: 60% 1% 39%;
+		gap: 20px;
+		.separator {
+			width: 1px;
+			height: 100%;
+			background-color: lightgrey;
+		}
 	}
+	
+	
 	.Checkout-content {
-		display: flex;
-		flex-direction: column;
+		position: relative;
 	}
-
-
+	.CompleteOrder {
+		background-color: black;
+		color: white;
+		padding: 1em;
+		display: inline-block;
+		border-radius: 4px;
+		font-size: var(--lg);
+		cursor: pointer;
+		position: relative;
+		bottom: 0;
+	}
 
 	.order {
 		display: grid;
