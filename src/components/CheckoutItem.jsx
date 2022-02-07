@@ -21,7 +21,7 @@ export default function CheckoutItem({product}) {
 
     <div>
       <p> {product.price} </p>
-     
+      
       <div style={{display:"flex", placeItems: "center"}}>
         <AmountModifier product={product}/>
         <span onClick={()=>{removeProductFromCart(product)}}> remove </span>
