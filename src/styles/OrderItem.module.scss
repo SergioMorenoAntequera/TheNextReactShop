@@ -9,30 +9,6 @@
 
 	p { margin: 0; }
 
-	.AmountCalculator {
-		display: flex;
-
-		div {
-			user-select: none;
-			margin-top: 10px;
-			border: solid 1px $--very-light-pink;
-			padding: .2em .5em;
-			&.Amount {
-				border-left: none;
-				border-right: none;
-			}
-			&.Minus, &.Plus {
-				cursor: pointer; 
-				transition: .1s;
-				&:hover {
-					background-color: $--text-input-field;
-				}
-			}
-			&.Minus { border-radius: 6px 0 0 6px;}
-			&.Plus { border-radius: 0 6px 6px 0;}
-		}
-	}
-
 	.PriceTags {
 		text-align: right;
 		.WithAmount {color: $--very-light-pink}

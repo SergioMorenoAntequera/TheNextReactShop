@@ -3,10 +3,10 @@ import AppContext from "@contexts/AppContext";
 import close from "@icons/icon_close.png";
 import styles from "@styles/OrderItem.module.scss";
 import Image from 'next/image';
+import AmountModifier from './AmountModifier';
 
 const OrderItem = ({product}) => {
 	const {
-		changeAmount,
 		removeProductFromCart
 	} = useContext(AppContext);
 
@@ -18,11 +18,7 @@ const OrderItem = ({product}) => {
 
 			<div className={styles.left}>
 				<p>{product.title}</p>
-				<div className={styles.AmountCalculator}> 
-					<div className={styles.Minus} onClick={()=>{changeAmount(product, -1);}}> - </div>
-					<div className={styles.Amount}> {product.amount} </div>
-					<div className={styles.Plus} onClick={()=>{changeAmount(product, +1);}}> + </div>
-				</div>
+				<AmountModifier product={product}/>
 			</div>
 
 			<div className={styles.PriceTags}>
