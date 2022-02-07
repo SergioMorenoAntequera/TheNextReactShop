@@ -1,3 +1,4 @@
+import Modal from '@components/Modal';
 import withPortal from '@hoc/withPortal';
 import React, { useState } from 'react';
 
@@ -20,9 +21,11 @@ function useModal(type) {
         break;
 
         case modalTypes.withProps:
-            ModalComponent = ({children}) => {
+            ModalComponent = ( props ) => {
                 if(!show) return <></>
-                return <> {children} </>
+                return<>
+                    <Modal setShowing={setShow} {...props} />
+                </>
             };
         break;
     
