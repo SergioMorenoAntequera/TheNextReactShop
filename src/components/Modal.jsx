@@ -2,9 +2,11 @@ import React from 'react';
 import styles from "@styles/Modal.module.scss";
 import { FaTimes } from "react-icons/fa";
 
-export default function Modal({ title, children, setShowing, customClasses, modal }) {
+function Modal({ title, children, setShowing, customClasses, modal }, props) {
     customClasses = customClasses ?? ""
     modal = modal ?? false
+
+    console.log(customClasses);
     
     function hideIfClickedOut(event) {
         if(modal) return;
@@ -13,7 +15,7 @@ export default function Modal({ title, children, setShowing, customClasses, moda
     }
 
     return <>
-         <div className={`${styles['modal-dialog-container']} ${customClasses}`} onClick={hideIfClickedOut}>
+         <div className={`${styles['modal-dialog-container']} ${customClasses}`} onClick={hideIfClickedOut} {...props}>
             <div className={styles['modal-dialog']}>
                 {!!title &&
                     <div className={styles.header}>
@@ -30,3 +32,7 @@ export default function Modal({ title, children, setShowing, customClasses, moda
         </div>
     </>;
 }
+
+
+
+export default { Modal }

@@ -10,7 +10,7 @@ export default function CheckoutItem({product}) {
 		removeProductFromCart
 	} = useContext(AppContext);
 
-  const [ [deleteDialogShow, setDeleteDialogShow], Modal] = useModal(modalTypes.withProps);
+  const [ [deleteDialogShow, setDeleteDialogShow], Modal] = useModal(modalTypes.confirm);
 
 
   return <div className={styles.CheckoutItem}>
@@ -23,18 +23,23 @@ export default function CheckoutItem({product}) {
     </div>
 
     <div>
-      <p> {product.price} </p>
+      <p> Total: {product.price * product.amount} </p>
+      
       
       <div style={{display:"flex", placeItems: "center"}}>
         <AmountModifier product={product}/>
         <span onClick={()=>{setDeleteDialogShow(true)}}> remove </span>
       </div>
+
+      {product.amount > 1 &&
+        <p> Unit: {product.price} </p>
+      }
+
     </div>
 
 
-    <Modal title={"Remove From Cart"}>
-      <p> Are you sure you want to delete {product.title} from the cart? </p>
-      <button onClick={()=>{removeProductFromCart(product); setDeleteDialogShow(false)}}> delte </button>
-    </Modal>
+    <Modal 
+      title={"Remove From Cart"} 
+      message={`Are you sure you want to delete ${product.title} from the cart? `}/>
   </div>;
 }

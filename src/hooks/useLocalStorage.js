@@ -64,7 +64,7 @@ export const useLocalStorage = (name, defaultValue) => {
             }
             
             onShow(parsedLocalStorage);
-        }, [state.synchronized, defaultValue, name]);
+        }, [state.synchronized]);
     } catch(error) {
         console.log(error);
         onError(error);

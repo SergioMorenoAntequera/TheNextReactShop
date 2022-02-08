@@ -19,6 +19,8 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': "off",
     'jsx-a11y/no-static-element-interactions': "off",
     'jsx-a11y/no-noninteractive-element-interactions': "off",
-    '@next/next/no-img-element':"off"
+    '@next/next/no-img-element':"off",
+    'react/display-name':"off",
+    'no-unused-vars': 'warning',
   }
 };
