@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "@styles/Modal.module.scss";
+import withPortal from '@hoc/withPortal';
 import { FaTimes } from "react-icons/fa";
 
 function Modal({ title, children, setShowing, customClasses, modal }, props) {
@@ -33,6 +34,36 @@ function Modal({ title, children, setShowing, customClasses, modal }, props) {
     </>;
 }
 
+function ModalConfirm({title, message, confirmAction, setShowing, modal}) {
+    return <>
+        <div className={`${styles['modal-dialog-container']}`}>
+            <div className={styles['modal-dialog']}>
+                {!!title &&
+                    <div className={styles.header}>
+                        <h3> {title} </h3>
+                        {!modal && 
+                            <span className={styles.x} onClick={()=>{setShowing(false)}}> <FaTimes className={styles.closeIcon}/> </span>
+                        }
+                    </div>
+                }
+                <div className={styles.body}>
+                    <p> {message} </p>
+                    
+                    <div style={{display:"flex","justifyContent": "end"}}>
+                        <button onClick={()=>{setShowing(false)}}> Cancel </button>
+                        <button onClick={confirmAction}> Connfirm </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </>
+};
 
 
-export default { Modal }
+const ModalWithPortal = withPortal(Modal);
+const ModalConfirmWithPortal = withPortal(ModalConfirm);
+
+export { 
+    ModalWithPortal, 
+    ModalConfirmWithPortal 
+};

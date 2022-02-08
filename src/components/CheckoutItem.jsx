@@ -7,11 +7,10 @@ import { modalTypes, useModal } from '@hooks/useModal';
 
 export default function CheckoutItem({product}) {
   const {
-		removeProductFromCart
-	} = useContext(AppContext);
+    removeProductFromCart
+  } = useContext(AppContext);
 
   const [ [deleteDialogShow, setDeleteDialogShow], Modal] = useModal(modalTypes.confirm);
-
 
   return <div className={styles.CheckoutItem}>
 
@@ -23,23 +22,29 @@ export default function CheckoutItem({product}) {
     </div>
 
     <div>
-      <p> Total: {product.price * product.amount} </p>
-      
-      
       <div style={{display:"flex", placeItems: "center"}}>
         <AmountModifier product={product}/>
         <span onClick={()=>{setDeleteDialogShow(true)}}> remove </span>
       </div>
 
+      
+      <p> {product.price} € </p>
       {product.amount > 1 &&
-        <p> Unit: {product.price} </p>
+        <p> x{product.amount} {product.price * product.amount}€ </p>
       }
+      
+    
+      
+
+      
 
     </div>
 
 
     <Modal 
-      title={"Remove From Cart"} 
+      title={"Remove From Cart"}
+      confirmAction={()=>{removeProductFromCart(product); setDeleteDialogShow(false)}}
       message={`Are you sure you want to delete ${product.title} from the cart? `}/>
+
   </div>;
 }
