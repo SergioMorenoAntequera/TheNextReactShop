@@ -1,10 +1,14 @@
-import { useState } from "react";
 import useClickOutsideClose from "@hooks/useClickOutsideClose";
 import MyOrderStyles from "@styles/MyOrder.module.scss";
 import ProductItemStyles from "@styles/ProductItem.module.scss";
+import { useLocalStorage } from "./useLocalStorage";
 
 export default function useInitialState() {
-  const [productsInCart, setProductsInCart] = useState([]);
+  
+  const {
+    storageItem: productsInCart, 
+    setLocalElement: setProductsInCart,
+  } = useLocalStorage("cart_V1", []);
 
   function addProductToCart(product) {
     // if(productsInCart.includes(product)) return;
