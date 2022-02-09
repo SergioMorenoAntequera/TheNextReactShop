@@ -4,6 +4,7 @@ import addedToCart from "@icons/bt_added_to_cart.svg";
 import AppContext from "@contexts/AppContext";
 import styles from '@styles/ProductItem.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ProductItem = ({product}) => {
 	const { productsInCart, addProductToCart, setToggleOrders } = useContext(AppContext);
@@ -18,7 +19,9 @@ const ProductItem = ({product}) => {
 	}
 	return (
 		<div className={styles.ProductItem}>
-			<Image src={product.images[0]} alt={product.title} width="100%" height="100%" layout="responsive" />
+			<Link href={`/products/${product.id}`} passHref >
+				<a> <Image src={product.images[0]} alt={product.title} width="100%" height="100%" layout="responsive" /> </a>
+			</Link>
 			<div className={styles['product-info']}>
 				<div>
 					<p>${product.price}</p>
