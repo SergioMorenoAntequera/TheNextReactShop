@@ -61,6 +61,7 @@
 	place-items: center;
 }
 .Header {
+	position: relative;
 	display: flex;
 	z-index: 1;
 	justify-content: space-between;
@@ -73,6 +74,13 @@
     top: 0;
     left: 0;
 	box-sizing: border-box;
+}
+
+.NewAddedMessage {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	text-align: center;
 }
 
 .menu {

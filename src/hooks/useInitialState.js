@@ -1,6 +1,7 @@
 import useClickOutsideClose from "@hooks/useClickOutsideClose";
 import MyOrderStyles from "@styles/MyOrder.module.scss";
 import ProductItemStyles from "@styles/ProductItem.module.scss";
+import { useState } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 export default function useInitialState() {
@@ -9,6 +10,8 @@ export default function useInitialState() {
     storageItem: productsInCart, 
     setLocalElement: setProductsInCart,
   } = useLocalStorage("cart_V1", []);
+  
+  const [newAddedMessage, setNewAddedMessage] = useState(false)
 
   function addProductToCart(product) {
     // if(productsInCart.includes(product)) return;
@@ -16,6 +19,12 @@ export default function useInitialState() {
     let productFound = auxProductsInCart.find((p) => p.id === product.id);
     if (!productFound) {
       setProductsInCart([...auxProductsInCart, { ...product, amount: 1 }]);
+      
+      setNewAddedMessage(true)
+      setTimeout(() => {
+        setNewAddedMessage(false)
+      }, 3000);
+
     } else {
       productFound = { ...productFound, amount: ++productFound.amount };
       setProductsInCart(auxProductsInCart);
@@ -65,5 +74,7 @@ export default function useInitialState() {
     toggleOrdersSafeArea,
     toggleOrders,
     setToggleOrders,
+
+    newAddedMessage, setNewAddedMessage
   };
 }

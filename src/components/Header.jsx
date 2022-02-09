@@ -9,11 +9,13 @@ import useClickOutsideClose from '@hooks/useClickOutsideClose';
 import styles from '@styles/Header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import PrimaryButton from 'components/PrimaryButton';
 
 const Header = () => {
 	const { 
 		productsInCartCount,
-		toggleOrdersSafeArea, toggleOrders, setToggleOrders
+		toggleOrdersSafeArea, toggleOrders, setToggleOrders,
+		newAddedMessage, setNewAddedMessage
 	} = useContext(AppContext);
 
 	const [toggleUserMenuSafeArea, toggleUserMenu, seToggleUserMenu] = useClickOutsideClose();
@@ -47,6 +49,13 @@ const Header = () => {
 				{toggleUserMenu && <Menu/>}
 				{toggleOrders && <MyOrder setToggleOrders={setToggleOrders}/>}
 			</div>
+
+			{newAddedMessage && 
+				<div className={styles.NewAddedMessage}>
+					<p> warning de new added </p>
+					<PrimaryButton onClick={()=>{setNewAddedMessage(false)}}> Continue Shopping </PrimaryButton>
+				</div>
+			}
 		</nav>	
 		
 		<div className={styles.HeaderOffset}></div>
