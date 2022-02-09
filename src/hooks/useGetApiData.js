@@ -8,7 +8,6 @@ export default function useGetApiData(API) {
     async function fetchData() {
       let response = await axios(API);
       setProducts(response.data);
-      console.log(response.data);
     }
     fetchData();
   }, [API]);
