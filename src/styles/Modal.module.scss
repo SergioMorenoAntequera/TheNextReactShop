@@ -16,7 +16,7 @@
     
     background-color: white;
     border-radius: 4px;
-    min-width: 20em;
+    width: 19em;
 }
 
 .modal-dialog .header {
@@ -32,12 +32,48 @@
     
     h3 {margin: 0;}
 }
-.modal-dialog .body{ 
+.modal-dialog .body { 
     padding: 1em;
+    .message { margin: 0 0 1.5em 0; }
 }
 
 .modal-dialog .header .x {
     cursor: pointer;
+}
+
+.modal-dialog .ctas {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+
+    button {
+        background-color: white;
+        border: none;
+        padding: 1em;
+        border-radius: 4px;
+        transition: .1s;
+        cursor: pointer;
+        
+    }
+    
+    button.primary:hover {
+        background-color: rgb(36, 36, 36);
+    }
+    button.primary {
+        display: grid;
+        place-items: center;
+        grid-template-columns: auto 1fr;
+        background-color: black;
+        color: white;
+        gap: 5px;
+    }
+    
+    button.secondary {
+        margin-right: 10px;
+    }
+    button.secondary:hover {
+        background-color: rgb(212, 212, 212);
+    }
 }
 
 .closeIcon:hover {

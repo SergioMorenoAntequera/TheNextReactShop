@@ -47,11 +47,11 @@ function ModalConfirm({title, message, confirmAction, setShowing, modal}) {
                     </div>
                 }
                 <div className={styles.body}>
-                    <p> {message} </p>
+                    <p className={styles.message}> {message} </p>
                     
-                    <div style={{display:"flex","justifyContent": "end"}}>
-                        <button onClick={()=>{setShowing(false)}}> Cancel </button>
-                        <button onClick={confirmAction}> Connfirm </button>
+                    <div className={styles.ctas}>
+                        <button className={styles.secondary} onClick={()=>{setShowing(false)}}> Cancel </button>
+                        <button className={styles.primary} onClick={confirmAction}> Connfirm </button>
                     </div>
                 </div>
             </div>

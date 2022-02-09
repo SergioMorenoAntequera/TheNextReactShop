@@ -6,12 +6,17 @@
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
 
-    .image {
-        border-radius: 4px;
+    p {margin: 0}
+
+    .image { border-radius: 4px;}
+    .title {margin-bottom: 1em; font-weight: bold;}
+
+    .tashIcon { 
+        cursor: pointer;
+        color: #505050;
+        margin-left: 10px;
+        transform: .1s;
+        &:hover {opacity: .8;}
     }
 
-}
-
-.DeleteModal {
-    background-color: red;
 }

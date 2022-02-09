@@ -4,6 +4,7 @@ import Image from 'next/image';
 import AppContext from '@contexts/AppContext';
 import AmountModifier from '@components/AmountModifier';
 import { modalTypes, useModal } from '@hooks/useModal';
+import { FaTrash } from 'react-icons/fa';
 
 export default function CheckoutItem({product}) {
   const {
@@ -24,20 +25,24 @@ export default function CheckoutItem({product}) {
     <div>
       <div style={{display:"flex", placeItems: "center"}}>
         <AmountModifier product={product}/>
-        <span onClick={()=>{setDeleteDialogShow(true)}}> remove </span>
+        <FaTrash 
+          onClick={()=>{setDeleteDialogShow(true)}} 
+          className={styles.tashIcon}
+        />
+
       </div>
 
+      { product.amount > 0 &&
+        <p> {product.price} € </p>
+      }
+      { product.amount == 0 &&
+        <p> Not Included </p>
+      }
       
-      <p> {product.price} € </p>
       {product.amount > 1 &&
         <p> x{product.amount} {product.price * product.amount}€ </p>
       }
       
-    
-      
-
-      
-
     </div>
 
 
